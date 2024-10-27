@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(back4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+        }
+
+
+        .header {
+            background-color: rbga(0,0,0,0);
+            text-align: center;
+            height: 10vh;
+            margin: 0;
+        }
+
+        .buttons {
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 500px;
+            border-radius = 50px;
+            border-style: solid;
+            box-shadow: none;
+            transition-duration: 0.4s;
+            border-color: black;
+            color: cornflowerblue;
+            background-color: rgb(255, 255, 255,.5);
+        }
+
+        a {
+            color: black;
+        }
+
+            a:visited {
+                color: black;
+            }
+
+            a:active {
+                color: white;
+            }
+
+        .buttons:hover {
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 500px;
+            border-radius = 50px;
+            border-style: solid;
+            border-color: white;
+            background-color: rgb(100, 149, 237,0);
+        }
+
+        .box {
+            margin: 10vh 0 10vh 0;
+            border-radius: 10px;
+            width: 50vw;
+            background-position-y: center;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(255,255,255,.7);
+        }
+
+    </style>
+    <meta charset="utf-8" />
+    <title>Campus Security Portal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <!--<div id="upperPart"></div>-->
+        
+
+
+        <div class="box">
+            <div class="header">
+                <h1>Leave Application Portal</h1>
+            </div>
+            <div class="b1">
+            <a href="studentForm.html">
+                <button class="buttons" href="studentForm.html">
+                    <span class="material-icons md-24">person</span><p>Student Portal</p>
+                </button>
+            </a>
+            <br />
+            <a href="wardenPortal.html">
+                <button class="buttons">
+                    <span class="material-icons md-24">supervisor_account</span><p>Warden Portal</p>
+                </button>
+            </a>
+            <br />
+            <a href="databseDisplay.html">
+                <button class="buttons">
+                    <span class="material-icons md-24">manage_search</span><p>Check Application Status</p>
+                </button>
+            </a>
+            <br />
+            <a href="databseDisplay.html">
+                <button class="buttons">
+                    <span class="material-icons md-24">local_police</span><p>Security Portal</p>
+                </button>
+            </a>
+        </div>
+        </div>
+
+</body>
+</html>

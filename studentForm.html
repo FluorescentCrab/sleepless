@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Student's Portal</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            justify-content:center;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image:url(back2.jpg);
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+
+        form{
+            margin: 10px;
+            text-align: center;
+            border-radius: 6px;
+            width: 50%;
+            height: 85  vh;
+            background-color: rgba(255,255,255,0.5);
+            padding: 20px;
+            font-size: 22px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            animation:transition 1.5s;
+        }
+        .inputBox{
+            border-block:2px solid black;
+            border-radius:7px;
+            height:30px;
+            width:100%;
+            margin:5px 0px 5px 0px;
+        }
+       
+        .header{
+            text-align:center;
+        }
+        .date{
+            width:15%;  
+        }
+        .radio{
+            margin: 0px 10px 0px 5px;
+        }
+        .buttons {
+            margin: 5px;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 250px;
+            border-radius = 50px;
+            border-style: solid;
+            box-shadow: none;
+            transition-duration: 0.4s;
+            border-color: rgb(100, 149, 237,1);
+            color: rgb(100, 149, 237,1);
+            background-color: white;
+        }
+
+        .buttons:hover {
+            
+            margin: 5px;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 250px;
+            border-radius = 50px;
+            border-style: solid;
+            color:white;
+            border-color: rgb(100, 149, 237,1);
+            background-color: rgb(100, 149, 237,1);
+        }
+        .entry{
+            width:100%;
+            text-align:left;
+        }
+        select{
+            margin:15px 20px 10px 20px;
+            height:30px;
+        }
+        @keyframes transition {
+            from {
+                transform:translateY(-130%);
+            }
+
+            to {
+                transform:translateY(0);
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <form action="connect.php" method="post">
+        
+        <h1 class="header">Fill All Your Details</h1>
+        <div class="entry">
+        <label for="fullName"> Name:</label>
+        <br />
+        <input / type="text" name="fullName" id="fullName" placeholder="  Enter Your Full Name" class="inputBox" required>
+        <br />
+
+        <label for="rollNo"> Roll number:</label>
+        <br />
+        <input / type="text" name="rollNo" id="rollNo" placeholder="  Enter Your Roll Number" class="inputBox" required>
+        <br />
+
+        <label for="program"> Program:</label>
+       
+        <select required name="program">
+            <option disabled selected>Select Your Program</option>
+            <option name="program" value="B.Tech">B.Tech</option>
+            <option name="program" value="BS-MS">BS-MS</option>
+            <option name="program" value="M.Tech">M.Tech</option>
+            <option name="program" value="PhD">PhD</option>
+        </select>
+        
+
+        <!--<label> Branch:</label>
+
+    <select required>
+        <option disabled selected>Select Your Branch:</option>
+        <option for="B.Tech">CSE</option>
+        <option for="B.Tech">ECE</option>
+        <option for="B.Tech">EEE</option>
+        <option for="B.Tech">ME</option>
+        <option for="B.Tech">MNC</option>
+        <option for="B.Tech">CH</option>
+        <option for="B.Tech">EP</option>
+        <option for="B.Tech">CIE</option>
+        <option for="BS-MS">Interdisiplinary Science</option>
+        <option for="M.Tech">M.Tech</option>
+        <option for="PhD">PhD</option>
+    </select>-->
+
+            
+
+        <label for="year">Year:</label>
+        
+
+        <select required name="year">
+            <option disabled selected>Select Your Year</option>
+            <option name="year" value="I">I Year</option>
+            <option name="year" value="II">II Year</option>
+            <option name="year" value="III">III Year</option>
+            <option name="year" value="IV">IV Year</option>
+            <option name="year" value="V">V Year</option>
+        </select>
+        <br />
+
+        <label for="mobileNo1"> Mobile Number1:</label>
+        <br />
+        <input / type="number" placeholder="  Mobile Number" name="mobileNo1" id="mobileNo1" class="inputBox" required>
+        <br />
+        <label for="mobileNo2"> Mobile Number 2:</label>
+        <br />
+        <input / type="number" placeholder="  Additional Mobile number(optional)" name="mobileNo2" id="mobileNo2" class="inputBox" required>
+        <br />
+
+        <label for="dol">Date of Leaving:</label>
+        <br />
+        <input / type="date" name="dol" id="dol" class="inputBox date" required>
+        <br />
+
+        <label for="cov">City of Visit:</label>
+        <br />
+        <input / type="text" placeholder="  City of visit" id="cov" name="cov" class="inputBox" required>
+        <br />
+
+        <div >
+            <label>Relation to Place:</label>
+            <br />
+            <label for="hometown">
+                <input / value="hometown" type="radio" name="rtp" id="hometown" class="radio">Hometown
+            </label>
+            <label for="vacation">
+                <input / value="vacation" type="radio" name="rtp" id="vacation" class="radio">Vacation
+            </label>
+            <label for="other">
+                <input / value="other" type="radio" name="rtp" id="other" class="radio">Other
+            </label>
+        </div>
+
+        </div>
+
+        <br />
+        
+        <input type="submit" value="Submit" class="buttons">
+
+    </form>
+    
+</body>
+</html>

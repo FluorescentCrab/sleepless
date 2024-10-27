@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Warden</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            box-sizing: border-box;
+            font-family:sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(back3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form {
+            margin: 10px;
+            text-align: center;
+            border-radius: 6px;
+            width: 50%;
+            height: 85 vh;
+            background-color: rgba(255,255,255,0.5);
+            padding: 20px;
+            font-size: 22px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            animation: transition 1.5s;
+        }
+
+        .inputBox {
+            border-block: 2px solid black;
+            border-radius: 7px;
+            height: 30px;
+            width: 80%;
+            margin: 5px 0px 5px 0px;
+        }
+        .buttons {
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 500px;
+            border-radius = 50px;
+            border-style: solid;
+            box-shadow: none;
+            transition-duration: 0.4s;
+            border-color: black;
+            color: cornflowerblue;
+            background-color: rgb(255, 255, 255,.5);
+        }
+        .buttons:hover {
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            width: 500px;
+            border-radius = 50px;
+            border-style: solid;
+            border-color: white;
+            background-color: rgb(100, 149, 237,0);
+        }
+        @keyframes transition {
+            from {
+                transform: translateY(-190%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <form name="loginForm" onsubmit="return validateForm()" action="warden.php" method="post">
+        <h1>Login Form</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="  Enter Your Username" class="inputBox" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="  Enter Your Password" class="inputBox" required><br><br>
+
+
+        <input type="submit" value="Login" class="buttons" >
+    </form> 
+
+
+</body>
+</html>

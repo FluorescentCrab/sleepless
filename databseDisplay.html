@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body
+        {
+            background-image:url(back1.jpg);
+            background-repeat:no-reapeat;
+        background-size:cover;
+            justify-content:center;
+            align-content:center;
+            align-items:center;
+        display:flex;
+        }
+        .inputBox{
+            border-block:2px solid black;
+            border-radius:7px;
+            height:30px;
+            width:40%;
+            margin:5px 0px 5px 0px;
+}
+        .table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            animation: transition 1s;
+        }
+
+        .head {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .table th, .table td {
+            padding: 12px 15px;
+        }
+        .form
+        {
+            margin: 15vh 0 15vh 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            width: 60vw;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            background-color:rgba(255,255,255,.5);
+            height:60vh;
+            align-content:center;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            color:white;
+            border-radius:6px;
+            animation:transition 1.4s;
+
+        }
+        @keyframes transition {
+            from {
+                transform: translateY(-150%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+	
+    <form action="fetch.php" method="post" class="form">
+        <h1>Enter Your Request ID</h1>
+        <br>
+        <label for="id">ID:</label>
+        <input / type="number" name="id" id="id" placeholder="Enter your id" class="inputBox" required>
+
+        <input / type="Submit" name="submit" value="GO">
+
+    </form>
+
+	
+</body>
+</html>

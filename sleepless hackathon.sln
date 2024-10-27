@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		connect.php = connect.php
 		databseDisplay.html = databseDisplay.html
 		fetch.php = fetch.php
+		fetchSecurity.php = fetchSecurity.php
 		formSubmitConfirm.html = formSubmitConfirm.html
 		C:\Users\Tanish\Desktop\Sleepless\iitdh.jpg = C:\Users\Tanish\Desktop\Sleepless\iitdh.jpg
 		index.html = index.html
@@ -20,8 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		send_email.py = send_email.py
 		studentForm.html = studentForm.html
 		style.css = style.css
-		warden.php = warden.php
 		temp.php = temp.php
+		warden.php = warden.php
 		wardenPortal.html = wardenPortal.html
 	EndProjectSection
 EndProject

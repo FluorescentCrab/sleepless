@@ -10,25 +10,7 @@ import qrcode.image.svg
 from PIL import Image, ImageDraw  # Replace qrcode.image.pil with PIL
 
 # Create a QR code instance
-qr = qrcode.QRCode(
-    version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=10,
-    border=4,
-)
 
-# Add data to the QR code
-data = "http://localhost/databseDisplay.html"
-qr.add_data(data)
-qr.make(fit=True)
-
-# Create an image from the QR code data
-img = qr.make_image(fill_color="black", back_color="white")
-img.save("qr_code.png")
-
-# Create an image from the QR code
-img = qr.make_image(fill_color="black", back_color="white")
-img.save("qr_code.svg")
 
 mydb = mysql.connector.connect(
   host="localhost",
@@ -39,6 +21,8 @@ mydb = mysql.connector.connect(
 
 accepted_roll_numbers = []
 rejected_roll_numbers =[]
+accepted_ids=[]
+rejected_ids=[]
 
 mycursor = mydb.cursor()
 
@@ -52,7 +36,24 @@ mycursor.execute("SELECT rollNo FROM registration WHERE status = 'reject'")
 for row in mycursor.fetchall():
   rejected_roll_numbers.append(row[0])  # Access the first element (roll number)
 
+mycursor.execute("SELECT id FROM registration WHERE status = 'accept'")
+for row in mycursor.fetchall():
+    accepted_ids.append(row[0])
+
+mycursor.execute("SELECT id FROM registration WHERE status = 'reject'")
+for row in mycursor.fetchall():
+    rejected_ids.append(row[0])
+
+
 mydb.close()
+    
+
+
+
+
+
+
+
 
 email_sender = 'neonwave2006@gmail.com'
 email_password = 'qduu bsal zfrz qyqk'
@@ -60,8 +61,26 @@ email_password = 'qduu bsal zfrz qyqk'
 for i in range(len(accepted_roll_numbers)):
 
 # Define email sender and receiver
+    qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4,
+)
 
-
+    # Add data to the QR code 
+    data = "http://localhost/fetchSecurity.php?id=" + str(accepted_ids[i])
+    qr.add_data(data)
+    qr.make(fit=True)
+    
+    # Create an image from the QR code data
+    img = qr.make_image(fill_color="black", back_color="white")
+    img.save("qr_code.png")
+    
+    # Create an image from the QR code
+    #img = qr.make_image(fill_color="black", back_color="white")
+    #img.save("qr_code.svg")
+    
     email_receiver = accepted_roll_numbers[i]+"@iitdh.ac.in"
 
 # Set the subject and body of the email
@@ -78,7 +97,7 @@ for i in range(len(accepted_roll_numbers)):
     em['Subject'] = subject
     em.attach(MIMEText(body,'plain'))
 
-    filename="qr_code.svg"
+    filename="qr_code.png"
 
     attachment = open(filename,'rb')
 
@@ -97,12 +116,23 @@ for i in range(len(accepted_roll_numbers)):
         smtp.sendmail(email_sender, email_receiver, em.as_string())
    
 
-for i in range(len(rejected_roll_numbers)):
+for j in range(len(rejected_roll_numbers)):
+    data = "http://localhost/fetchSecurity.php?id=" + str(rejected_ids[j])
+    qr.add_data(data)
+    qr.make(fit=True)
+    
+    # Create an image from the QR code data
+    img = qr.make_image(fill_color="black", back_color="white")
+    img.save("qr_code.png")
+    
+    # Create an image from the QR code
+    #img = qr.make_image(fill_color="black", back_color="white")
+    #img.save("qr_code.svg")
 
 # Define email sender and receiver
 
 
-    email_receiver = rejected_roll_numbers[i]+"@iitdh.ac.in"
+    email_receiver = rejected_roll_numbers[j]+"@iitdh.ac.in"
 
 # Set the subject and body of the email
 
@@ -118,7 +148,7 @@ for i in range(len(rejected_roll_numbers)):
     em['Subject'] = subject
     em.attach(MIMEText(body,'plain'))
 
-    filename="qr_code.svg"
+    filename="qr_code.png"
 
     attachment = open(filename,'rb')
 
